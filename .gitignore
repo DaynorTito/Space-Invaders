@@ -1,0 +1,72 @@
+# Visual Studio
+.vscode/
+.vs/
+bin/
+obj/
+*.suo
+*.user
+*.userosscache
+*.suo
+*.tss
+*.vsp
+*.vspx
+[Tt]est[Rr]esult*/
+[Bb]in/
+[Ll]og/
+[Ll]og.xml
+[Ll]og.txt
+[Jj]D*/    
+*.pfx
+*.publishsettings
+node_modules/
+orleans.codegen.cs
+Generated_Files/
+
+# Rider
+.idea/
+
+# Mono Auto Generated Files
+mono_crash.*
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# JetBrains Rider
+.idea/
+
+# UnoPlatform
+GeneratedCode/
+
+# NuGet
+*.nupkg
+*.paket/paket.exe
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.suo
+*.tss
+*.vsp
+*.vspx
+
+# Java JAR files
+*.jar
+*.class
