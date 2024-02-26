@@ -1,0 +1,88 @@
+﻿<Page
+    x:Class="SpaceInvadersDaynorTito.GameView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SpaceInvadersDaynorTito"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:SpaceInvadersDaynorTito.ViewModel"
+    mc:Ignorable="d" d:DesignWidth="1080" d:DesignHeight="720"
+    IsTabStop="True"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+  <Page.DataContext>
+    <vm:GameViewModel/>
+  </Page.DataContext>
+  <Grid>
+    <Canvas x:Name="GameScreen" Background="Black">
+
+      <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+        <TextBlock Text="SCORE" FontSize="24" Foreground="White"  Margin="10,10,0,0"/>
+
+        <TextBlock x:Name="score" Text="{Binding Score}" FontSize="24" Foreground="Green" Margin="10,10,0,0"/>
+        <Border Width="30"/>
+        <TextBlock Text="Lives" FontSize="24" Foreground="White" Margin="220,10,10,0" HorizontalAlignment="Right"/>
+
+        <StackPanel x:Name="imagenStackPanel" Orientation="Horizontal" VerticalAlignment="Top" Margin="10,14,0,0">
+        </StackPanel>
+      </StackPanel>
+
+      <ItemsControl ItemsSource="{Binding Enemies}">
+        <ItemsControl.ItemsPanel>
+          <ItemsPanelTemplate>
+            <Canvas/>
+          </ItemsPanelTemplate>
+        </ItemsControl.ItemsPanel>
+        <ItemsControl.ItemTemplate>
+          <DataTemplate>
+            <Image Source="{Binding Sprite.Source}"
+                   Width="{Binding HitBox.Width}"
+                   Height="{Binding HitBox.Height}"
+                   Margin="5"
+                   Visibility="{Binding Alive}" >
+              <Image.RenderTransform>
+                <TranslateTransform X="{Binding HitBox.X}" Y="{Binding HitBox.Y}"/>
+              </Image.RenderTransform>
+              </Image>
+          </DataTemplate>
+        </ItemsControl.ItemTemplate>
+      </ItemsControl>
+
+      <ItemsControl Canvas.Left="0" ItemsSource="{Binding Shields}">
+        <ItemsControl.ItemsPanel>
+          <ItemsPanelTemplate>
+            <Canvas/>
+          </ItemsPanelTemplate>
+        </ItemsControl.ItemsPanel>
+        <ItemsControl.ItemTemplate>
+          <DataTemplate>
+            <Image Source="{Binding Sprite.Source}"
+                           Width="{Binding HitBox.Width}"
+                           Height="{Binding HitBox.Height}"
+                           Margin="50,0,50,0"
+                           Visibility="{Binding Alive}">
+              <Image.RenderTransform>
+                <TranslateTransform X="{Binding HitBox.X}" Y="{Binding HitBox.Y}"/>
+              </Image.RenderTransform>
+            </Image>
+          </DataTemplate>
+        </ItemsControl.ItemTemplate>
+      </ItemsControl>
+
+      <Image Source="ms-appx:///Assets/PlayerSprite.png"
+       Width="50"
+       Canvas.Top="{Binding PlayerHitBox.Y}"
+       Canvas.Left="{Binding PlayerHitBox.X}"/>
+
+
+      <Rectangle Name="Shot"
+           Fill="Red"
+           Width="{Binding PlayerShotHitBox.Width}"
+           Height="{Binding PlayerShotHitBox.Height}"
+           Canvas.Left="{Binding PlayerShotHitBox.X}"
+           Canvas.Top="{Binding PlayerShotHitBox.Y}"
+           Visibility="{Binding ShotVisible}" />
+
+  </Canvas>
+  </Grid>
+</Page>

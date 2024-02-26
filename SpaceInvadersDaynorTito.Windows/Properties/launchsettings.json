@@ -1,0 +1,10 @@
+{
+	"profiles": {
+		"SpaceInvadersDaynorTito.Windows (Unpackaged)": {
+			"commandName": "Project"
+		},
+		"SpaceInvadersDaynorTito.Windows (Package)": {
+			"commandName": "MsixPackage"
+		}
+	}
+}
