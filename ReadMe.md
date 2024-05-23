@@ -3,6 +3,8 @@
 ## Overview
 
 Space Invaders is a classic arcade game where the player controls a ship at the bottom of the screen and must shoot down rows of alien invaders before they reach the bottom. The game is known for its simple yet addictive gameplay and challenging levels.
+![image](https://github.com/DaynorTito/Space-Invaders/assets/107761709/98b4083e-394f-4784-bab7-41bb5fd02eb7)
+
 
 ## Technologies Used
 
